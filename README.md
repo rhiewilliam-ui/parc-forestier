@@ -3,6 +3,8 @@
 Application console en C qui centralise les données des arbres d'une parcelle de forêt :
 chargement depuis un fichier CSV, affichage, recherche par espèce et tri selon deux critères.
 
+![Menu et affichage de la liste](docs/menu-liste.png)
+
 ## Le problème
 
 Un office forestier souhaite suivre les arbres d'une parcelle : espèce, âge, hauteur, diamètre,
@@ -15,6 +17,10 @@ charger en mémoire, permettre de les consulter et de les trier, le tout en C st
 - Affichage de l'ensemble des arbres sous forme de tableau aligné dans la console
 - Recherche de tous les arbres d'une espèce donnée
 - Tri par **âge** (tri par insertion) et par **état de santé** (tri par sélection)
+
+| Recherche par espèce | Tri par âge |
+|---|---|
+| ![Recherche par espèce](docs/recherche-espece.png) | ![Tri par âge](docs/tri-age.png) |
 
 ## Technologies
 
@@ -47,6 +53,8 @@ Les virgules décimales éventuelles (format français) sont converties en point
 
 ## Installation
 
+Avec **gcc** (MinGW, w64devkit, Linux, macOS) :
+
 ```bash
 git clone https://github.com/rhiewilliam-ui/parc-forestier.git
 cd parc-forestier
@@ -54,7 +62,14 @@ gcc -Wall -o foret programme_principal.c
 ./foret
 ```
 
-Le fichier `test_fichiers.csv` doit se trouver dans le même dossier que l'exécutable.
+Avec **Visual Studio** (invite de commandes développeur) :
+
+```
+cl programme_principal.c
+programme_principal.exe
+```
+
+Le programme lit `test_fichiers.csv` dans le dossier courant : lance-le depuis le dossier du projet.
 
 ## Mon rôle
 
